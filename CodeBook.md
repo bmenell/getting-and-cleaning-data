@@ -30,16 +30,13 @@ The dataset includes the following files:
 - 'test/X_test.txt': Test set.
 - 'test/y_test.txt': Test labels.
 
-The following files are available for the train and test data. Their descriptions are equivalent.
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis.
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+## Transformations and Tidying
 
-## Transformations
-
-1. Merge the training and the test sets to create one data set
-2. Extract only the measurements on the mean and standard deviation for each measurement
-3. Use descriptive activity names to name the activities in the data set
-4. Appropriately label the data set with descriptive activity names
-5. Create a second, independent tidy data set with the average of each variable for each activity and each subject
+1. Applied the column header "subjectID" to the data from subject_test and subject_train
+2. Applied column headers from features.txt to X_train and X_test data
+3. Applied the column header "activity" to the y_train and t_test data
+4. Column bind all the training data together
+5. Column bind all the testing data together
+6. Row bind the training and testing into one large data set
+7. Convert the activity column integers into their labels (e.g. walking)
+8. Remove all the columns that don't contain mean() or std() data
